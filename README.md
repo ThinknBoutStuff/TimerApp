@@ -6,7 +6,7 @@ Try it out here: http://stevewilcox.co/beta/timerapp/
 
 ## Use
 
-The Timer App can create multiple "stage" timers in *Edit Mode* and counts down, starting with the top stage, in *Timer Mode*.
+The Timer App can create a multiple "stage" timer in *Edit Mode* and counts down starting from the top stage in *Timer Mode*.
 
 Pressing the button below 'mode' changes the App's current mode and behavior. 
 
@@ -22,11 +22,13 @@ If the user presses a field and makes no edits, that field will revert to defaul
 
 ### Timer Mode
 
-In Timer Mode, the buttom button turns green and functions as a 'play' button. Once the play button is hit, the play button converts into a 'pause' button and the top stage begins counting down, chirping and changing color when the current stage is complete before moving onto counting down the next stage. 
+In Timer Mode, the buttom button turns green and functions as a 'play' button. Once the play button is hit, the play button converts into a 'pause' button and the top stage begins counting down, chirping and changing color when the current stage is complete before counting down the next stage. 
 
-Once the play button is hit, the mode will read 'RUNNING' to indicate the timer is currently counting down. When the pause button is pressed, the mode will read 'RESET'; pressing the reset button will reset all minute and second values to thier defaults (or their last values when leaving edit mode). 
+Once the play button is hit, the mode will read 'RUNNING' to indicate the timer is currently counting down. When the pause button is pressed, the mode will read **'RESET'**; pressing the reset button will reset all minute and second values to thier defaults (aka their last values when leaving edit mode). 
 
-When all stages are complete, the app will beep twice. 
+When all stages are complete, the app will alert with a different sound (bit like an elevator noise).
 
+### Interested in more?
 
+Check out my blog write-up: http://stevewilcox.co/blog/technology/2017/04/22/Timer-App-Beta-Version/
 
