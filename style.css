@@ -1,0 +1,305 @@
+* {
+    font-family: 'Dosis', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#menuBar {
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
+    padding-bottom: 0.25em;
+    background-color: #4f769e;
+    z-index: 1;
+    font-size: 8em;
+}
+
+#modeBut {
+    margin: auto;
+    width: 6em;
+    text-align: center;
+    background-color: rgba(129, 174, 219, 0.5);
+    border-radius: 5px;
+}
+
+.modeText {
+    margin: .3em 0;
+    font-size: 50%;
+    text-align: center;
+}
+
+input {
+    background: inherit;
+    border: none;
+}
+
+input:focus {
+    outline:none;
+}
+
+input:disabled {
+    color:inherit;
+}
+
+::placeholder{
+    text-decoration: none;
+}
+
+#main {
+    margin: 2em auto;
+    width: 100%;
+    padding-top: 19em;
+}
+
+.stageTemplate {
+    font-size: 120%;
+    margin: auto;
+    margin-bottom: 1em;
+    width: 100%;
+
+}
+
+.stage {
+    width: 85%;
+    height: 5.7em;
+    margin: auto;
+    padding-top: 1em;
+    border: 1px solid purple;
+    background-color: #a1a2b7;
+    border-radius: 1em;
+}
+
+.stageName {
+    margin-left: 2%;
+    float: left;
+    text-align: center;
+    font-size: 3.5em;
+    width: 60%;
+    left: 3%;
+    text-overflow: ellipsis;
+
+}
+
+.stageTime {
+    float:left;
+    text-align: center;
+    width: auto;
+}
+
+.Nums {
+    display: inline-block;
+    text-align: center;
+    font-size: 3.5em;
+    width: 1.8em;
+    letter-spacing: .1em;
+}
+
+.colon {
+    vertical-align: 15%;
+    margin-left: -0.5em;
+    font-size: 3em;
+    display: inline-block;
+}
+
+.delBut {
+    float: right;
+    border: 0.25em solid #c90626;
+    border-radius: 100%;
+    width: 2.5em;
+    height: 2.5em;
+    margin-top: 1em;
+    margin-right: 3%;
+}
+
+.delBut .horizontal {
+    position: relative;
+    background-color: #c90626;
+    width: 53%;
+    height: 12%;
+    top: 45%;
+    left: 25%;
+    z-index: 0;
+}
+
+#button {
+    margin: 2em auto;
+    border-radius: 100%;
+    width: 8em;
+    height: 8em;
+    z-index: 1;
+}
+
+.pauseBut {
+    position:relative;
+    border: 0.5em solid #c90626;
+}
+
+.pauseBut .vertical {
+        position: absolute;
+        background-color: #c90626;
+        width: 1em;
+        height: 3.5em;
+        top: 2.3em;
+        left: 2.5em;
+}
+
+.pauseBut .horizontal {
+        position: absolute;
+        background-color: #c90626;
+        width: 1em;
+        height: 3.5em;
+        top: 2.3em;
+        left: 4.3em;
+}
+
+.editBut {
+    position:relative;
+    border: 0.5em solid #81aedb;
+
+}
+
+.editBut .horizontal {
+        position: absolute;
+        background-color: #81aedb;
+        width: 4em;
+        height: 1em;
+        top: 3.5em;
+        left: 2em;
+}
+
+.editBut .vertical {
+        position: absolute;
+        background-color: #81aedb;
+        width: 1em;
+        height: 4em;
+        top: 2em;
+        left: 3.5em;
+}
+
+.playBut {
+    position:relative;
+    border: 0.5em solid green;
+
+}
+
+.playBut .dot {
+    position: absolute;
+    background-color: green;
+    width: 3em;
+    height: 3em;
+    top: 2.5em;
+    left: 2.5em;
+
+    border-radius: 100%;
+}
+
+@media only screen and (orientation: landscape) {
+    #button {
+        font-size: 75%;
+    }
+    #menuBar {
+        font-size: 3em;
+    }
+    #main {
+        padding-top: 6em;
+    }
+    .stage {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 950px) {
+    #menuBar {
+        font-size: 5em;
+    }
+
+    #modeBut {
+        width: 100%;
+    }
+
+    #main {
+        padding-top: 12em;
+    }
+
+    .stage {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .stageName {
+        float: none;
+        margin-left: 18%;
+        width: 60%;
+
+    }
+
+    .stageTime {
+        float: none;
+        margin: 0.5em 15%;
+    }
+
+    .delBut {
+        float: none;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+    .colon {
+        margin-left: -0.3em;
+    }
+
+
+}
+
+
+@media (max-width: 581px) {
+    * {
+        font-size: 95%;
+    }
+
+    #modeBut {
+        font-size: .5em;
+    }
+
+    #main {
+        padding-top: 12em;
+    }
+
+    .colon {
+        margin-left: -0.4em;
+    }
+    .Nums {
+        width: 2em;
+    }
+    .pauseBut .vertical {
+            top: 2.5em;
+            left: 2.8em;
+    }
+
+    .pauseBut .horizontal {
+            top: 2.5em;
+            left: 4.6em;
+    }
+
+    .editBut .horizontal {
+            top: 3.7em;
+            left: 2.2em;
+    }
+
+    .editBut .vertical {
+            top: 2.2em;
+            left: 3.7em;
+    }
+
+    .playBut .dot {
+            top: 2.7em;
+            left: 2.7em;
+    }
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    </head>
+    <body>
+        <div id="menuBar">
+            <div class="modeText">
+                MODE:
+            </div>
+            <div id="modeBut">
+                <p style="font-size:60%;">
+                    (Click to Toggle Mode)
+                </p>
+            </div>
+        </div>
+        <div id="main">
+            <div class="stageTemplate" hidden>
+                <div class="stage">
+                    <input class="stageName" maxlength="15" tabindex="-1"></input>
+                    <div class="stageTime">
+                        <input type="number" class="minutes Nums" value="00" maxlength="2"></input>
+                        <div class="colon">
+                            :
+                        </div>
+                        <input type="number" class="seconds Nums" value="00" maxlength="2"></input>
+
+                    </div>
+                    <div class="delBut">
+                        <div class="horizontal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="button" class="editBut">
+            <div class="dot"></div>
+            <div class="horizontal"></div>
+            <div class="vertical"></div>
+        </div>
+
+        <audio id='bloop'>
+            <source src='Bloop.mp3' type='audio/mp3' />
+        </audio>
+        <audio id="beep">
+            <source src='Beep.mp3' type='audio/mp3' />
+        </audio>
+        <script type="text/javascript" src="app.js"></script>
+
+    </body>
+</html>
