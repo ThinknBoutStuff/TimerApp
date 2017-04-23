@@ -217,6 +217,9 @@
         var count = 0;
         app.timeout = setTimeout(step, interval);
         function step() {
+            // Forces Timeout to stop
+            if (app.mode != 'play') return clearTimeout(app.timeout);
+
             var dt = Date.now() - expected;
             if (dt > interval) {
                 // TODO: Add stuff in case of 'drift'
@@ -233,17 +236,20 @@
                 decrement(1);
                 count = 0;
             }
+            // take into account the drift
             app.timeout = setTimeout(step, Math.max(0, interval - dt));
-            // take into account drift
         }
     }
 
     // Could be cleaned up...
     function decrement(n) {
+        if (app.mode === 'stop') return pause();
+
         var s = parseFloat(app.sec.value, 10) - n;
         var m = parseFloat(app.min.value, 10) - 1;
         if (s === -1) {
             app.current.parentElement.style.background = app.doneColor;
+            app.counter++;
             if (app.counter >= app.stages.length) {
                 return pause();
             } else {
@@ -257,21 +263,13 @@
                 app.counter++;
                 if (app.counter === app.stages.length) {
                     app.current.parentElement.style.background = app.doneColor;
-                    app.mode === 'stop';
-                    setTimeout(function () {
-                        app.beep.currentTime = 0;
-                        app.beep.play();
-                        setTimeout(function () {
-                            app.beep.currentTime = 0.05;
-                            app.beep.play();
-                        }, 150);
-                    }, 150);
-                    return pause();
+                    pause();
+                    return finalSound();
+
                 } else {
                     // Don't play sound on last stage
                     if (app.counter < app.stages.length) {
-                        app.bloop.currentTime = 0;
-                        app.bloop.play();
+                        stageFinishSound();
                     }
                     app.current.parentElement.style.background = app.doneColor;
                     return updateCurrent(app.stages[app.counter]);
@@ -339,5 +337,17 @@
             min.value = app.timeInfo[name].minutes;
         }
     }
+
+    // Sound functions
+    function stageFinishSound() {
+        app.bloop.currentTime = 0;
+        app.bloop.play();
+    }
+
+    function finalSound() {
+        app.beep.currentTime = 0;
+        app.beep.play();
+    }
+
 
 }) ();
