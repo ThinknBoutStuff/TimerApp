@@ -44,6 +44,8 @@ input:focus {
 }
 
 input:disabled {
+    -webkit-opacity:1;
+    -webkit-text-fill-color: black;
     color:inherit;
 }
 
@@ -146,7 +148,7 @@ input:disabled {
         width: 1em;
         height: 3.5em;
         top: 2.3em;
-        left: 2.5em;
+        left: 2.3em;
 }
 
 .pauseBut .horizontal {
@@ -155,7 +157,7 @@ input:disabled {
         width: 1em;
         height: 3.5em;
         top: 2.3em;
-        left: 4.3em;
+        left: 4.6em;
 }
 
 .editBut {
@@ -189,14 +191,18 @@ input:disabled {
 }
 
 .playBut .dot {
+    width: 0;
+    height: 0;
     position: absolute;
-    background-color: green;
-    width: 3em;
-    height: 3em;
-    top: 2.5em;
-    left: 2.5em;
 
-    border-radius: 100%;
+    border-top: 2em solid transparent;
+    border-bottom: 2em solid transparent;
+    border-left: 3.3em solid green;
+
+    border-radius: 5%;
+
+    top: 2em;
+    left: 2.8em;
 }
 
 @media only screen and (orientation: landscape) {
@@ -214,49 +220,16 @@ input:disabled {
     }
 }
 
-@media (max-width: 950px) {
-    #menuBar {
-        font-size: 5em;
-    }
-
-    #modeBut {
-        width: 100%;
-    }
-
-    #main {
-        padding-top: 12em;
-    }
+@media only screen and (orientation: portrait) {
 
     .stage {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-    }
-
-    .stageName {
-        float: none;
-        margin-left: 18%;
-        width: 60%;
-
-    }
-
-    .stageTime {
-        float: none;
-        margin: 0.5em 15%;
-    }
-
-    .delBut {
-        float: none;
-        margin: auto;
-        margin-bottom: 1em;
+        width: 90%;
     }
     .colon {
-        margin-left: -0.3em;
+        margin-right: -0.3em;
+        padding-left: 0.1em;
     }
-
-
 }
-
 
 @media (max-width: 581px) {
     * {
@@ -301,5 +274,48 @@ input:disabled {
             top: 2.7em;
             left: 2.7em;
     }
+
+}
+
+@media (max-width: 950px) {
+    #menuBar {
+        font-size: 5em;
+    }
+
+    #modeBut {
+        width: 100%;
+    }
+
+    #main {
+        padding-top: 12em;
+    }
+
+    .stage {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .stageName {
+        float: none;
+        margin-left: 18%;
+        width: 60%;
+
+    }
+
+    .stageTime {
+        float: none;
+        margin: 0.5em 15%;
+    }
+
+    .delBut {
+        float: none;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+    .colon {
+        margin-left: -0.3em;
+    }
+
 
 }

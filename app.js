@@ -39,6 +39,16 @@
     // Button has different functionality depending on mode
     document.getElementById('button').addEventListener('click', function() {
         // console.log("Current Mode: " + app.mode);
+
+        // Trick mobile sounds into working!!!
+        // Starts audio at quite volume, sound functions return volume to regular settings
+        app.bloop.volume = 0.0;
+        app.beep.volume = 0.0;
+        app.bloop.play();
+        app.beep.play();
+        app.bloop.pause();
+        app.beep.pause();
+
         if (app.mode === "edit") {
             addStage();
             viewElement(app.button);
@@ -340,11 +350,14 @@
 
     // Sound functions
     function stageFinishSound() {
+        // Changes volume of audio and 'continues' to play audio when needed
+        app.bloop.volume = 1;
         app.bloop.currentTime = 0;
         app.bloop.play();
     }
 
     function finalSound() {
+        app.beep.volume = 1;
         app.beep.currentTime = 0;
         app.beep.play();
     }
