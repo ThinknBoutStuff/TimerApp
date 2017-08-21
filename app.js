@@ -183,17 +183,17 @@
     // adds new stage and deletion listener
     // TODO Alter addstage to take variables so it can be used to reconstruct
     // Timer stages from a saved cache!
-    function addStage() {
+    function addStage(name, min, sec) {
         var stage = app.template.cloneNode(true);
-        var stageName = "Stage " + (app.stages.length + 1);
+        var stageName = name || "Stage " + (app.stages.length + 1);
         stage.querySelector('.stageName').value = stageName;
         stage.removeAttribute("hidden");
         stage.value = stageName;
         app.stages.push(stage);
         app.container.appendChild(stage);
 
-        var m = stage.querySelector(".minutes");
-        var s = stage.querySelector(".seconds");
+        var m = min || stage.querySelector(".minutes");
+        var s = sec || stage.querySelector(".seconds");
 
         // Clear on focus...
         m.onfocus = function() {this.value = ''};
