@@ -2,8 +2,6 @@
 
 Basic Interval Timer written in Javascript. Should work with most Desktop and Mobile Browsers.
 
-Try it out here: http://stevewilcox.co/beta/timerapp/
-
 ## Use
 
 The Timer App can create a multiple "stage" timer in *Edit Mode* and counts down starting from the top stage in *Timer Mode*.
@@ -28,7 +26,4 @@ Once the play button is hit, the mode will read 'RUNNING' to indicate the timer 
 
 When all stages are complete, the app will alert with a different sound (bit like an elevator noise).
 
-### Interested in more?
-
-Check out my blog write-up: http://stevewilcox.co/blog/technology/2017/04/22/Timer-App-Beta-Version/
 
